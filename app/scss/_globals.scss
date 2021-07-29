@@ -1,0 +1,130 @@
+/* MIXINS RESPONSIVE */
+$screen768: 768px;
+
+
+@mixin screen768 {
+  @media (max-width: #{$screen768}) {
+    @content;
+  }
+}
+
+
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+  
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: black;
+    font-family: 'Kanit', sans-serif;
+    cursor: none;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+    cursor: none;
+}
+
+li {
+    list-style: none;
+    color: white;
+}
+
+
+
+/* FLEXBOX */
+.flex {
+    display: flex; 
+
+    &-jc-sb {
+      justify-content: space-between;
+    }
+
+    &-jc-c {
+      justify-content: center;
+    }
+
+    &-jc-sa {
+      justify-content: space-around;
+    }
+    
+    &-ai-c {
+      align-items: center;
+    }
+
+    
+    &-fd-c {
+        flex-direction: column;
+    }
+
+}
+
+
+.wrapper {
+  min-height: 100vh;
+}
+
+
+/* TEXT ANIMATION */
+.text-move {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    border-top: solid white .1rem;
+    border-bottom: solid white .1rem;
+    @include screen768 {
+        font-size: 2rem;
+    }
+    & .marquee__content {
+        overflow: hidden;
+    }
+    & ul {
+        padding: 1rem 0;
+        & li {
+          -webkit-text-stroke: 1px white;
+          color: transparent;
+          @include screen768 {
+            font-size: 2rem;
+        }
+        }
+  }
+}
+
+.list-inline {
+  justify-content: space-around;
+  width: 33.33%;
+} 
+
+.text-move01 {
+  width: 300%;
+  animation: marquee 40s linear infinite forwards;
+  @include screen768 {
+      width: 800%;
+  }
+}
+
+@keyframes marquee {
+  0% { 
+      transform: translateX(0); 
+  }
+  100% { 
+      transform: translateX(-36.6%); 
+  }
+}
