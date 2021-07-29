@@ -1,0 +1,248 @@
+/* MIXINS RESPONSIVE */
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: black;
+  font-family: 'Kanit', sans-serif;
+  cursor: none;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  cursor: none;
+}
+
+li {
+  list-style: none;
+  color: white;
+}
+
+/* FLEXBOX */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-fd-c {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+/* TEXT ANIMATION */
+.text-move {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  border-top: solid white .1rem;
+  border-bottom: solid white .1rem;
+}
+
+@media (max-width: 768px) {
+  .text-move {
+    font-size: 2rem;
+  }
+}
+
+.text-move .marquee__content {
+  overflow: hidden;
+}
+
+.text-move ul {
+  padding: 1rem 0;
+}
+
+.text-move ul li {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+@media (max-width: 768px) {
+  .text-move ul li {
+    font-size: 2rem;
+  }
+}
+
+.list-inline {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 33.33%;
+}
+
+.text-move01 {
+  width: 300%;
+  -webkit-animation: marquee 40s linear infinite forwards;
+          animation: marquee 40s linear infinite forwards;
+}
+
+@media (max-width: 768px) {
+  .text-move01 {
+    width: 800%;
+  }
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-36.6%);
+            transform: translateX(-36.6%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-36.6%);
+            transform: translateX(-36.6%);
+  }
+}
+
+.hover-card {
+  position: relative;
+}
+
+.card-wrapper {
+  min-height: calc(100vh - 7rem);
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.hover-img {
+  margin: 1rem;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hover-img {
+    width: 250px;
+    height: 330px;
+    margin: 3rem 0;
+  }
+}
+
+.hover-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.hover-img img:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+/* CURSOR */
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: solid white .2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  -webkit-transform: translate(-40%, -240%);
+          transform: translate(-40%, -240%);
+  pointer-events: none;
+  z-index: 10;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-property: background, width, height;
+  transition-property: background, width, height;
+}
+
+.cursor span {
+  visibility: hidden;
+  font-size: 1.5rem;
+  font-weight: 550;
+  line-height: 1.6;
+  color: black;
+  display: inline-block;
+}
+
+.link-grow {
+  width: 9rem;
+  height: 9rem;
+  background: white;
+  -webkit-transform: translate(-40%, -140%);
+          transform: translate(-40%, -140%);
+}
+
+.link-grow span {
+  visibility: visible;
+  color: black;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+/*# sourceMappingURL=main.css.map */
